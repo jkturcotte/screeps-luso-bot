@@ -4,6 +4,8 @@
 
 I used the [Screeps Typescript Starter](https://github.com/screepers/screeps-typescript-starter/tree/master) as a start point.
 
+Gitbook documentation available [here](https://luso.gitbook.io/screeps-luso-bot).
+
 ## Setup
 
 ### `screeps.json`
@@ -11,6 +13,10 @@ I used the [Screeps Typescript Starter](https://github.com/screepers/screeps-typ
 Copy `screeps.sample.json` to `screeps.json` and fill in `token` fields for the main, sim, and arena screeps worlds. Fill in the `email` and `password` section of the `pserver` environment if running on a private server.
 
 More environments can be created by adding to the `screeps.json` file. E.g. supporting a second branch instead of manually editing the `branch` field.
+
+### Installing packages
+
+I think if you're in this repo you can just run `npm install`. This is more for future me if I have to re-setup everything. But haven't tested yet.
 
 ## Usage
 
