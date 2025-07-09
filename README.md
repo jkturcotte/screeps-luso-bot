@@ -2,23 +2,25 @@
 
 I used the [Screeps Typescript Starter](https://github.com/screepers/screeps-typescript-starter/tree/master) as a start point.
 
-# Setup
+## Setup
 
-## `screeps.json`
+### `screeps.json`
 
 Copy `screeps.sample.json` to `screeps.json` and fill in `token` fields for the main, sim, and arena screeps worlds. Fill in the `email` and `password` section of the `pserver` environment if running on a private server.
 
 More environments can be created by adding to the `screeps.json` file. E.g. supporting a second branch instead of manually editing the `branch` field.
 
-## Pushing to Screeps server
+## Usage
+
+### Pushing to Screeps server
 
 Run `npm run push-<env>`. Where `<env>` is one of the environments defined in `screeps.json`. e.g. `npm run push-main` to push to the main MMO server.
 
-# Screeps Typescript Starter Changes
+## Screeps Typescript Starter Changes
 
 Full disclosure I am not JS or TS competent. I am just moving forward. I got some errors when trying to run some `npm` commands so I went through the motions of fixing them but I don't know if I should have. Anyways this is what I've done.
 
-## eslint-config-prettier Conflict
+### eslint-config-prettier Conflict
 
 I had a conflict saying something like:
 
@@ -30,7 +32,7 @@ This was due to me using a newer version of `eslint-config-prettier` which resul
 
 Fixed by removing `prettier/@typescript-eslint` from the `extends` array in the `.eslintrc.js` file.
 
-## TypeScript Version Warning
+### TypeScript Version Warning
 
 After fixing the above, I got a warning saying:
 
@@ -64,11 +66,11 @@ Fixed by upgrading the ESLint packages with:
 npm install eslint@latest @typescript-eslint/parser@latest @typescript-eslint/eslint-plugin@latest --save-dev
 ```
 
-## Node.js Engine Warning (`EBADENGINE`)
+### Node.js Engine Warning (`EBADENGINE`)
 
 Apparently I'm using Node.js version 24 where this project expects v10 or v12. To fix this I updated the `package.json` file to set `"node": ">=18.0.0"` in the `engines` section.
 
-## ESLint v9 Configuration File Error
+### ESLint v9 Configuration File Error
 
 Apparently ESLint v9 uses a new configuration style. I had to rename `.eslintrc.js` to `eslint.config.js`.
 
@@ -80,7 +82,7 @@ This also resulted in needing to install a few more packages:
 npm install globals typescript-eslint eslint-plugin-import eslint-config-prettier --save-dev
 ```
 
-## Linting errors
+### Linting errors
 
 Before making any changes I ran `npm run lint` and found some errors:
 
@@ -169,7 +171,7 @@ Finally, the last issue. It seems to be "`require()` style import is forbidden".
 this._consumer = new SourceMapConsumer(require("main.js.map") as RawSourceMap);
 ```
 
-# Resources
+## Resources
 
 - [Screeps Typescript Starter Docs](https://screepers.gitbook.io/screeps-typescript-starter)
 - [Screeps Typescript Starter Repo](https://github.com/screepers/screeps-typescript-starter/tree/master)
