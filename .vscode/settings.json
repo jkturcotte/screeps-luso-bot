@@ -1,15 +1,15 @@
 {
     "[javascript]": {
-        "editor.formatOnSave": false
+        "editor.formatOnSave": true
     },
     "[json]": {
         "editor.formatOnSave": true
     },
     "[typescript]": {
-        "editor.formatOnSave": false
+        "editor.formatOnSave": true
     },
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": "explicit"
     },
     "editor.formatOnSave": true,
     "editor.renderWhitespace": "boundary",
@@ -24,5 +24,6 @@
         "typings/**": true
     },
     "typescript.tsdk": "./node_modules/typescript/lib",
-    "eslint.enable": true
+    "eslint.enable": true,
+    "editor.rulers": [100]
 }

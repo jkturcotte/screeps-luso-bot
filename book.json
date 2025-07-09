@@ -1,5 +1,5 @@
 {
-  "title": "Screeps Typescript Starter",
-  "description": "Starter kit for TypeScript-based Screeps AI codes.",
+  "title": "Screeps: Luso Bot",
+  "description": "My attempt at a Screeps AI.",
   "root": "./docs"
 }

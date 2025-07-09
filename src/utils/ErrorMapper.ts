@@ -1,4 +1,4 @@
-import { SourceMapConsumer } from "source-map";
+import { RawSourceMap, SourceMapConsumer } from "source-map";
 
 export class ErrorMapper {
   // Cache consumer
@@ -6,7 +6,10 @@ export class ErrorMapper {
 
   public static get consumer(): SourceMapConsumer {
     if (this._consumer == null) {
-      this._consumer = new SourceMapConsumer(require("main.js.map"));
+      // apparently `require()` is old school but also `main.js.map` doesn't exist until runtime
+      // so we will ignore this error...
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      this._consumer = new SourceMapConsumer(require("main.js.map") as RawSourceMap);
     }
 
     return this._consumer;
@@ -30,7 +33,7 @@ export class ErrorMapper {
       return this.cache[stack];
     }
 
-    // eslint-disable-next-line no-useless-escape
+
     const re = /^\s+at\s+(.+?\s+)?\(?([0-z._\-\\\/]+):(\d+):(\d+)\)?$/gm;
     let match: RegExpExecArray | null;
     let outStack = error.toString();
