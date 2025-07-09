@@ -185,3 +185,4 @@ this._consumer = new SourceMapConsumer(require("main.js.map") as RawSourceMap);
 - [Screeps Third Party Tools](https://docs.screeps.com/third-party.html)
 - [Screeps AutoComplete (haven't tried this - let me know if it works)](https://github.com/Garethp/ScreepsAutocomplete)
 - [Emoji Finder](https://emojifinder.com/construction)
+- [Gitbook Documentation](https://gitbook.com/docs)
